@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--导入属性配置 -->
+    <properties resource="config/generator.properties"/>
+    <!--classPathEntry节点的location属性值是本地的mysql-connector-java.jar的位置，-->
+    <!--因为连接数据库是需要驱动的，我们用maven已经自动帮我们下好了jar包，在左边的External Libraries里面寻找JAR包的路径-->
+    <classPathEntry
+            location="D:\Developer\Maven\apache-maven-3.2.3\repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
+    <context id="context1">
+        <!-- 注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" /><!-- 是否取消注释 -->
+            <property name="suppressDate" value="true" /> <!-- 是否生成注释代时间戳 -->
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${driverClass}"
+                        connectionURL="${jdbcUrl}"
+                        userId="${username}"
+                        password="${password}" />
+
+        <!-- 类型转换 -->
+        <javaTypeResolver>
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="${modelPackage}" targetProject="${modelProject}" />
+        <sqlMapGenerator targetPackage="${sqlPackage}" targetProject="${sqlProject}" />
+        <javaClientGenerator targetPackage="${mapperPackage}" targetProject="${mapperProject}" type="XMLMAPPER" />
+
+        <!-- 如果需要通配所有表 直接用sql的通配符    %即可 -->
+        <table schema="" tableName="${table}" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+
+    </context>
+</generatorConfiguration>
