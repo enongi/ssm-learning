@@ -29,8 +29,8 @@ public class TbUserMapperTest {
     @Test
     public void insert() {
         TbUser tbUser = new TbUser();
-        tbUser.setUsernam("zhangsan");
-        tbUser.setNickname("张三");
+        tbUser.setUsername("lisi");
+        tbUser.setNickname("李四");
         tbUser.setPassword("123456");
         int result = tbUserMapper.insert(tbUser);
         System.out.println(result);

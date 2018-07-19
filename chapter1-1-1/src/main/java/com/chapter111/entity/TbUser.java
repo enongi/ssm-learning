@@ -3,13 +3,13 @@ package com.chapter111.entity;
 public class TbUser {
     private Integer id;
 
-    private String usernam;
+    private String username;
 
     private String nickname;
 
     private String password;
 
-    private String sex;
+    private Boolean sex;
 
     private Integer age;
 
@@ -23,12 +23,12 @@ public class TbUser {
         this.id = id;
     }
 
-    public String getUsernam() {
-        return usernam;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsernam(String usernam) {
-        this.usernam = usernam;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getNickname() {
@@ -47,11 +47,11 @@ public class TbUser {
         this.password = password;
     }
 
-    public String getSex() {
+    public Boolean getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Boolean sex) {
         this.sex = sex;
     }
 
